@@ -1,0 +1,37 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(bg.jpg) no-repeat;
+	background-size: cover;
+}
+
+form{
+	width: 400px;
+	margin: auto;
+	padding: 20px;
+	font-size: 30px;
+	font-family: sans-serif;
+	color: white;
+}
+
+.loghead{
+	padding: 10px;
+	border: 2px solid #4caf50;
+	color: yellow;
+	text-align: center;
+}
+
+.btn{
+	padding: 10px;
+	text-align: center;
+}
+.message{
+	border: 2px solid #d43333;
+	padding: 10px;
+}
+
+.login-box h1{
+	font-size: 30px;
+}
