@@ -4,9 +4,27 @@
 	<meta charset="utf-8">
 	<title>Register Here</title>
 	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="Register1.css">
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/Register1.css' %}">
 </head>
 <body>
+    <nav>
+        <div class="wrapper">
+            <div class="sidebar">
+                <h2>BMS</h2>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                    <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+                    <li><a href="#"><i class="fas fa-address-book"></i>Feedback</a></li>
+                </ul>
+                <div class="social_media">
+                    <a href="{% url 'loginP' %}">Login</a>
+                    <a href="{% url 'inputP' %}">Input</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 	<section>
         <div class="login-box">
             <form>
@@ -29,7 +47,7 @@
 				<input type="password" name="password" style="margin: 0px; width: 100%; height:30px;">
 				<br>
 				<div class="btn"><button style="height: 40px;width: 120px" class="button">Register</button></div>
-				<p class="message">If you already have account click <a href="Login1.html" style="color: #018428;">Login</a></p>
+				<p class="message">If you already have account click <a href="{% url 'loginP' %}" style="color: #018428;">Login</a></p>
 			</form>
         </div>
 	</section>

@@ -4,20 +4,40 @@
 	<meta charset="utf-8">
 	<title>Bookmarks Panel</title>
 	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="Login1.css">
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/Login1.css' %}">
 </head>
 <body>
+    <nav>
+        <div class="wrapper">
+            <div class="sidebar">
+                <h2>BMS</h2>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                    <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+                    <li><a href="#"><i class="fas fa-address-book"></i>Feedback</a></li>
+                </ul> 
+                <div class="social_media">
+                    <a href="{% url 'loginP' %}">Login</a>
+                    <a href="{% url 'registerP' %}">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 	<section>
         <div class="login-box">
             <form> 
                 <h1 class=loghead>Bookmark Panel</h1>
+                <br>
+                Site Name:<br>
+	            <input type="name" name="name" style="margin: 0px; width: 100%; height:30px;"><br>
+                <br>
                 Url Link:<br>
 	            <input type="link" name="link" style="margin: 0px; width: 100%; height:30px;"><br>
 	            <br>
-                Type or Choose Category:<br>
-	            <input type="link" name="link" style="margin: 0px; width: 100%; height:30px;"><br>
-	            <br>
-		        <label for="types">Choose Categories here:</label>
+		        <label for="types">Type or Choose Categories here:</label>
+                <input type="link" name="link" style="margin: 0px; width: 100%; height:30px;"><br>
                     <select id="types" name="types">
                         <option value="social media">Social Media</option>
                         <option value="blog">Blog</option>
@@ -27,7 +47,6 @@
 		        <br>
                 <br>
                 Actions:<br>
-                <br>
 		        <div class="btn">
                     <button style="height: 40px;width: 120px" class="button">Add</button>
                     <button style="height: 40px;width: 120px" class="button">Delete</button>
