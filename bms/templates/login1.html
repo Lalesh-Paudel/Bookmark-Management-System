@@ -27,7 +27,8 @@
     </nav>
 	<section>
         <div class="login-box">
-            <form> 
+            <form action="authenticate" method="POST"> 
+                {% csrf_token %}
                 <h1 class=loghead>Login Panel</h1>
 				<br>
                 <i class="fas fa-user"></i>
