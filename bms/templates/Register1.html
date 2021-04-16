@@ -27,7 +27,8 @@
     </nav>
 	<section>
         <div class="login-box">
-            <form>
+            <form action="register", method="POST">
+				{% csrf_token %}
 				<h1 class=loghead>Register Panel</h1>
 				Full Name: <input type="text" name="fullName" placeholder="Enter full name" style="margin: 0px; width: 100%; height:30px;"><br>
 				<br>
@@ -44,7 +45,7 @@
 				<br>
 				<i class="fas fa-lock"></i>
 				Confirm Password<br>
-				<input type="password" name="password" style="margin: 0px; width: 100%; height:30px;">
+				<input type="password" name="confirm_password" style="margin: 0px; width: 100%; height:30px;">
 				<br>
 				<div class="btn"><button style="height: 40px;width: 120px" class="button">Register</button></div>
 				<p class="message">If you already have account click <a href="{% url 'loginP' %}" style="color: #018428;">Login</a></p>
