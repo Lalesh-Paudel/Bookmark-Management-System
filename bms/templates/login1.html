@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Login Here</title>
-	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+    <meta charset="utf-8">
+    <title>Login Here</title>
+    <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
     {% load static %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/Login1.css' %}">
+    <!-- Loading static files into a single location -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Login1.css' %}">
+    <!-- Django static files location -->
 </head>
+
 <body>
     <nav>
         <div class="wrapper">
             <div class="sidebar">
                 <h2>BMS</h2>
                 <ul>
-                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-                    <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-                    <li><a href="#"><i class="fas fa-address-book"></i>Feedback</a></li>
+                    <li><a href="{% url 'homeP' %}"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="{% url 'profileP' %}"><i class="fas fa-user"></i>Profile</a></li>
+                    <li><a href="{% url 'aboutP' %}"><i class="fas fa-address-card"></i>About</a></li>
+                    <li><a href="{% url 'feedbackP' %}"><i class="fas fa-address-book"></i>Feedback</a></li>
                 </ul>
                 <div class="social_media">
                     <a href="{% url 'registerP' %}">Register</a>
@@ -25,25 +29,27 @@
             </div>
         </div>
     </nav>
-	<section>
+    <section>
         <div class="login-box">
             <form action="authenticate" method="POST"> 
                 {% csrf_token %}
                 <h1 class=loghead>Login Panel</h1>
-				<br>
+                <br>
                 <i class="fas fa-user"></i>
                 Username<br>
-	            <input type="username" name="username" style="margin: 0px; width: 100%; height:30px;"><br>
-	            <br>
+                <input type="username" name="username" style="margin: 0px; width: 100%; height:30px;"><br>
+                <br>
                 <i class="fas fa-lock"></i>
-		        Password<br>
-	            <input type="password" name="password" style="margin: 0px; width: 100%; height:30px;">
-		        <br>
-		        <div class="btn"><button style="height: 40px;width: 120px" class="button">Login</button></div>
-			    <br>
-	            <p class="message">if you are not registered then click <a href="{% url 'registerP' %}" style="color: #30b85d;">Register</a></p>
+                Password<br>
+                <input type="password" name="password" style="margin: 0px; width: 100%; height:30px;">
+                <br>
+                <div class="btn"><button style="height: 40px;width: 120px" class="button">Login</button></div>
+                <br>
+                <p class="message">If you are not registered then click <a href="{% url 'registerP' %}"
+                        style="color: #30b85d;">Register</a></p>
             </form>
         </div>
-	</section>
+    </section>
 </body>
+
 </html>
