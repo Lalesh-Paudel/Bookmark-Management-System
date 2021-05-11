@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OappConfig(AppConfig):
+class InputConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'oapp'
+    name = 'input'

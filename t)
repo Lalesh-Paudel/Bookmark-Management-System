@@ -1,0 +1,60 @@
+[33mcommit c5fb044bb11f2def9c4d2435df32618eb650bc29[m[33m ([m[1;36mHEAD -> [m[1;32mmanaging_apps[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 8635eb4 c300bf9
+Author: Lekhnath Parajuli <np03a190308@heraldcollege.edu.np>
+Date:   Fri Apr 16 15:29:39 2021 +0545
+
+    create and connect django app with html forms
+
+[33mcommit c300bf9d8cca7c18d00a715c5d909ecb02e817f7[m
+Author: Manish Pandey <np03a190132@heraldcollege.edu.np>
+Date:   Fri Apr 16 15:07:56 2021 +0545
+
+    Changes in code of html and css file of login and register page
+
+[33mcommit 1454f7ba2b68caf0cab34c5b044735e6a5dcc5e0[m
+Author: Manish Pandey <np03a190132@heraldcollege.edu.np>
+Date:   Fri Apr 16 14:56:14 2021 +0545
+
+    Addition of installation and execution process of the system in README.md file
+
+[33mcommit 8635eb40b7ed060ba2a026ef988cb386f4e8b745[m
+Author: Lekhnath Parajuli <np03a190308@heraldcollege.edu.np>
+Date:   Fri Apr 16 00:34:53 2021 +0545
+
+    acomfigure post request on form
+
+[33mcommit d5796eebd9e3ff9d93c1772590258ce862087914[m
+Author: SparrowARK <karkiaaditya2@gmail.com>
+Date:   Sun Apr 11 22:52:41 2021 +0545
+
+    Django implemented and webpanel update
+
+[33mcommit deb367f6cb21ead386b643429351256698711796[m
+Author: SparrowARK <karkiaaditya2@gmail.com>
+Date:   Fri Apr 9 22:38:07 2021 +0545
+
+    bookmark input form modified
+
+[33mcommit eb0bf2202898878ef7d09eb6248268cb9fbd4b56[m
+Author: SparrowARK <karkiaaditya2@gmail.com>
+Date:   Fri Apr 9 22:35:20 2021 +0545
+
+    bookmark input form
+
+[33mcommit 217a7313588c446762b83b14d7a15f13c01ed703[m
+Author: SparrowARK <karkiaaditya2@gmail.com>
+Date:   Fri Apr 9 01:12:08 2021 +0545
+
+    first login and register panel commit
+
+[33mcommit f6b8e3e152de0830164a95baac86484d7b4f3592[m
+Author: Lalesh <81338792+Lalesh-Paudel@users.noreply.github.com>
+Date:   Wed Apr 7 23:15:43 2021 +0545
+
+    Create Welcome.txt
+
+[33mcommit 9d6415a1c6579a774f76c04b0019483396cbd4db[m
+Author: Lalesh <81338792+Lalesh-Paudel@users.noreply.github.com>
+Date:   Wed Apr 7 23:09:27 2021 +0545
+
+    Initial commit

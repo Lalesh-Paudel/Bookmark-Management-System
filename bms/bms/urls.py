@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from oapp import views
+# from renderer import views
 
 urlpatterns = [
-    path('login/', include('login.urls')),
-    path('register/', include('register.urls')),
-    # path('', views.input, name='inputP'),
-    # path('login/', views.login, name='loginP'),
-    # path('register/', views.register, name='registerP'),
-    path('input/', views.input, name='inputP'),
+    path('', include('home.urls'), name='home'),
+    path('login/', include('login.urls'), name="login"),
+    path('register/', include('register.urls'), name="register"),
+    path('feedbacks/', include('feedbacks.urls'), name="feedback"),
+    path('about/', include('about.urls'), name="about"),
+    path('profile/', include('profiles.urls'), name="profile"),
+    path('input/', include('input.urls'), name="input"),
 ]
