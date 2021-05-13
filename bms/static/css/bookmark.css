@@ -1,0 +1,116 @@
+.home_container {
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home_container .category {
+    min-height: 30px;
+    margin-bottom: 30px;
+    background-color: red;
+}
+
+.home_container .bookmarks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.home_container .bookmark_wrapper {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(39, 34, 34);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.home_container .top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 10px;
+    background-color: rgb(63, 104, 1);
+} 
+
+.home_container .top span {
+    color: white;
+    flex-grow: 1;
+}
+
+.home_container .top svg {
+    height: 20px;
+}
+
+.home_container .top svg path {
+    fill: white;
+    margin-left: 10px;
+}
+
+.home_container .bottom {
+    background-color: turquoise;
+    flex-grow: 1;
+}
+
+.home_container .bottom .highlight {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: transparent;
+}
+
+.home_container .bottom .highlight:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgba(50, 50, 50, 0.4);
+}
+
+.more_options {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+
+    display: none;
+}
+
+.more_options ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(71, 59, 59);
+}
+
+.more_options ul li {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 1px;
+    background-color: rgb(39, 34, 34);
+    border: none;
+    color: rgb(150, 142, 142);;
+}
+
+.more_options ul li:hover {
+    cursor: pointer;
+    background-color: rgb(180, 173, 173);
+    color:rgb(63, 104, 1)
+}
+
+.home_container .top svg:hover {
+    cursor: pointer;
+    background-color: rgb(117, 173, 32);
+    border-radius: 10px;
+}
+
+.home_container .top svg:hover ~ .more_options{
+    display: block;
+    background-color: rebeccapurple;
+}
+
+.more_options:hover {
+    display: block;
+}
