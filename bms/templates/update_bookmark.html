@@ -1,26 +1,31 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Bookmarks Panel</title>
-	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
-    {% load static %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/Login1.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Register1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bookmark.css' %}">
+
+    <title>Document</title>
 </head>
 <body>
-    {% include 'side_bar.html' %}
+    {% include "side_bar.html" %}
 
-	<section>
+    <section>
         <div class="login-box">
-            <form method="POST" action="create_bookmark">
+            <form method="POST" action="update">
                 {% csrf_token %}
                 <h1 class=loghead>Bookmark Panel</h1>
                 <br>
                 Site Name:<br>
-	            <input type="name" name="name" style="margin: 0px; width: 100%; height:30px;"><br>
+	            <input type="name" name="name" style="margin: 0px; width: 100%; height:30px;" value="{{choosen_bookmark.site_name}}"><br>
                 <br>
                 Url Link:<br>
-	            <input type="link" name="link" style="margin: 0px; width: 100%; height:30px;"><br>
+	            <input type="link" name="link" style="margin: 0px; width: 100%; height:30px;" value="{{choosen_bookmark.url}}"><br>
 	            <br>
 		        <label for="types">Type or Choose Categories here:</label>
                 <input class="category_field" type="category" name="category" style="margin: 0px; width: 100%; height:30px;" value="{{choosen_bookmark.category}}"><br>
@@ -33,11 +38,8 @@
 		        <br>
                 <br>
                 Actions:<br>
-		        <div class="btn">
-                    <button style="height: 40px;width: 120px" class="button">Add</button>
-                </div>
                 <div class="btn">
-                    <button style="height: 40px;width: 120px" class="button">Clear</button>
+                    <button style="height: 40px;width: 120px" class="button update">Update</button>
                 </div>
             </form>
         </div>
@@ -48,7 +50,6 @@
                 document.querySelector(".category_field").value = category_selection.value
             }
         </script>
-
 	</section>
 </body>
 </html>

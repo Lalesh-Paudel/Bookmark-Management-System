@@ -18,11 +18,12 @@ from django.urls import path, include
 # from renderer import views
 
 urlpatterns = [
-    path('', include('home.urls'), name='home'),
-    path('login/', include('login.urls'), name="login"),
-    path('registration/', include('register.urls'), name="registration"),
-    path('feedbacks/', include('feedbacks.urls'), name="feedback"),
-    path('about/', include('about.urls'), name="about"),
-    path('profile/', include('profiles.urls'), name="profile"),
-    path('inputs/', include('inputs.urls'), name="inputs"),
+    path('', include('my_apps.urls'), name='my_apps')
+    # path('', include('home.urls'), name='home'),
+    # path('login/', include('login.urls'), name="login"),
+    # path('registration/', include('register.urls'), name="registration"),
+    # path('feedbacks/', include('feedbacks.urls'), name="feedback"),
+    # path('about/', include('about.urls'), name="about"),
+    # path('profile/', include('profiles.urls'), name="profile"),
+    # path('inputs/', include('inputs.urls'), name="inputs"),
 ]
