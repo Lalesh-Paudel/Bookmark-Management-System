@@ -1,4 +1,5 @@
 from .models import bookmarkList
+import numpy as np
 
 class BookmarkModel():
 
@@ -17,11 +18,25 @@ class BookmarkModel():
     def get_category(self):
         return self.bookmark.category
 
-def get_bookmarks():
+def get_bookmarks(category):
     bookmarks = bookmarkList.objects.all()
     bookmark_objects = []
 
-    for bookmark in bookmarks:
-        bookmark_objects.append(BookmarkModel(bookmark))
-    
+    if category == 'all':
+        for bookmark in bookmarks:
+            bookmark_objects.append(BookmarkModel(bookmark))
+    else:
+        for bookmark in bookmarks:
+            if bookmark.category == category:
+                bookmark_objects.append(BookmarkModel(bookmark))
+
     return bookmark_objects
+
+def get_categories():
+    bookmarks = bookmarkList.objects.all()
+    categories = []
+
+    for bookmark in bookmarks:
+        categories.append(bookmark.category)
+    
+    return np.unique(categories)

@@ -5,12 +5,17 @@ from . import views
 
 urlpatterns = [
     path('', views.Home, name='home'),
+    path('category/', views.category, name="category"),
+
     path('profile/', views.profile, name="profile"),
     path('about/', views.about, name="about"),
     path('feedbacks/', views.feedback, name="feedback"),
 
     path('registration/', views.render_register_from, name='registration'),
     path('registration/register', views.register, name='register'),
+
+    path('login/', views.render_login_form, name='login'),
+    # path('login/authenticate', views.authenticate, name='authenticate'),
 
     path('remove_bookmark/', views.remove_bookmark, name="remove_bookmark"),
     path('update_bookmark/', views.update_bookmark, name="update_bookmark"),

@@ -8,7 +8,8 @@ from . import operations
 # Create your views here.
 def Home(request):
     my_content = {
-        "bookmarks": operations.get_bookmarks(),
+        "categories": operations.get_categories(),
+        "bookmarks": operations.get_bookmarks('all'),
     }
 
     return render(request, 'Home.html', my_content)
@@ -34,9 +35,11 @@ def register(request):
 
     return render(request, 'Register1.html')
 
+def render_login_form(request):
+    return render(request, 'login1.html', {})
+
 def input(request):
     return render(request, 'Input.html')
-
 
 
 def create_bookmark(request):
@@ -56,11 +59,10 @@ def remove_bookmark(request):
     bookmarkList.objects.filter(id=id).delete()
 
     my_content = {
-        "bookmarks": operations.get_bookmarks(),
+        "bookmarks": operations.get_bookmarks('all'),
     }
 
     return render(request, 'Home.html', my_content)
-
 
 
 def update_bookmark(request):
@@ -88,7 +90,18 @@ def update(request):
     current_bookmark.save()
 
     my_content = {
-        "bookmarks": operations.get_bookmarks(),
+        "bookmarks": operations.get_bookmarks('all'),
+    }
+
+    return render(request, 'Home.html', my_content)
+
+
+def category(request):
+    category_name = request.GET['category']
+
+    my_content = {
+        "categories": operations.get_categories(),
+        "bookmarks": operations.get_bookmarks(category_name),
     }
 
     return render(request, 'Home.html', my_content)
