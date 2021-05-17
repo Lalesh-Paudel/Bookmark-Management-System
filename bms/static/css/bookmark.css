@@ -53,6 +53,21 @@
 .home_container .bottom {
     background-color: turquoise;
     flex-grow: 1;
+
+    position: relative;
+}
+
+.home_container .bottom div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+
+    word-wrap: break-word;
+    color: gray;
+
+    overflow: hidden;
 }
 
 .home_container .bottom .highlight {
@@ -77,6 +92,7 @@
     top: 10px;
 
     display: none;
+    z-index: 1000;
 }
 
 .more_options ul {
