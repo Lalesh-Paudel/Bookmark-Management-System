@@ -12,11 +12,12 @@
 </head>
 
 <body>
+    {{form}}
     {% include 'side_bar.html' %}
 
     <section>
         <div class="login-box">
-            <form action="authenticate" method="POST"> 
+            <form action="authenticate" method="POST">
                 {% csrf_token %}
                 <h1 class=loghead>Login Panel</h1>
                 <br>
@@ -36,4 +37,5 @@
         </div>
     </section>
 </body>
+
 </html>
