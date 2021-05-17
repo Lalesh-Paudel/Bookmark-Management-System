@@ -15,7 +15,7 @@ urlpatterns = [
     path('registration/register', views.register, name='register'),
 
     path('login/', views.render_login_form, name='login'),
-    # path('login/authenticate', views.authenticate, name='authenticate'),
+    path('login/authenticate', views.authenticate, name='authenticate'),
 
     path('remove_bookmark/', views.remove_bookmark, name="remove_bookmark"),
     path('update_bookmark/', views.update_bookmark, name="update_bookmark"),

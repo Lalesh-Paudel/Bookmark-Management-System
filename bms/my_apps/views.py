@@ -2,7 +2,7 @@ from django.apps.config import AppConfig
 from django.db.models.manager import BaseManager
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import bookmarkList
+from .models import UserAuthenticationList, CurrentLogedInUser, bookmarkList
 from . import operations
 
 # Create your views here.
@@ -33,9 +33,27 @@ def register(request):
     password  = request.POST['password']
     confirm_password  = request.POST['confirm_password']
 
+    # if password == confirm_password:
+    #     new_user = UserAuthenticationList(full_name=full_name, username=username, email=email, password=password)
+    #     CurrentLogedInUser.admin = new_user
+    #     new_user.save()
+    #     CurrentLogedInUser.save()
+
     return render(request, 'Register1.html')
 
+def authenticate(request):
+    usernae = request.POST['username']
+    password = request.POST['password']
+
+    # for user in UserAuthenticationList.objects.all():
+    #     if (user.username == usernae) and  (user.password == password):
+    #         CurrentLogedInUser.objects.all().delete()
+    #         new_admin = CurrentLogedInUser()
+    #         new_admin.admin = user
+    return render(request, 'login1.html', {})
+
 def render_login_form(request):
+
     return render(request, 'login1.html', {})
 
 def input(request):
@@ -47,7 +65,6 @@ def create_bookmark(request):
     url       =     request.POST['link']
     category  =     request.POST['category']
 
-    print(site_name, url, category)
     bookmark = bookmarkList(site_name=site_name, url=url, category=category)
     bookmark.save()
 

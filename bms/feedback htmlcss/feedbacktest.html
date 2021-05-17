@@ -2,26 +2,32 @@
 <html>
     <head>
         <title>FeedBack</title>
-        <link rel="stylesheet" type="text/css" href="feedback.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/feedback.css' %}s">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Register1.css' %}">
+        
         <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
     </head>
     <body>
-        <section></section>
-        <div class="container">
-            <form>
-                <h1>Feedback</h1>
-                <div class="id">
-                    <input type="text" placeholder="Full Name">
-                    <i class="far fa-user"></i>
-                </div>
-                <div class="id">
-                    <input type="email" placeholder="Email address">
-                    <i class="far fa-envelope"></i>
-                    
-                </div>
-                <textarea cols="15" rows="5" placeholder="Feedbacks"></textarea>
-                <button>Send</button>
-            </form>
-        </div>
+
+        {% include 'side_bar.html' %}
+
+        <section>
+            <div class="container">
+                <form>
+                    <h1>Feedback</h1>
+                    <div class="id">
+                        <input type="text" placeholder="Full Name">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="id">
+                        <input type="email" placeholder="Email address">
+                        <i class="far fa-envelope"></i>
+                        
+                    </div>
+                    <textarea cols="15" rows="5" placeholder="Feedbacks"></textarea>
+                    <button>Send</button>
+                </form>
+            </div>
+        </section>
     </body>
 </html>
