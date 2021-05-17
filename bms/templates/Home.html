@@ -6,56 +6,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'css/favicon.ico' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Register1.css' %}">
     <link rel="stylesheet" href="{% static 'css/bookmark.css' %}">
-
     <title>home page</title>
 </head>
 <body>
     {% include 'side_bar.html' %}
 
     <div class="home_container">
+        <div class="category"> </div>
+        <div class="bookmarks"> 
 
-        <div class="category">
-            <a href="{% url 'category' %}?category=all">all</a>
-            {% for category in categories %}
-                <a href="{% url 'category' %}?category={{category}}">{{category}}</a>
-            {% endfor %}
-        </div>
+            <div class="bookmark_wrapper">
+                <div class="top">
+                    <span>Bookmark List</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8C13.1 8 14 7.1 14 6C14 4.9 13.1 4 12 4C10.9 4 10 4.9 10 6C10 7.1 10.9 8 12 8ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10ZM12 16C10.9 16 10 16.9 10 18C10 19.1 10.9 20 12 20C13.1 20 14 19.1 14 18C14 16.9 13.1 16 12 16Z" fill="#323232"/>
+                    </svg>   
+                    <div class="more_options" title="click">
+                        <ul>
+                            <li>remove</li>
+                            <li>update</li>
+                        </ul>
+                    </div>                                    
+                </div>
 
-        <div class="bookmarks">
-
-            {% for bookmark in bookmarks %}
-                <div class="bookmark_wrapper" id="{{bookmark.id}}">
-                    <div class="top">
-                        <span>{{ bookmark.get_sitename }}</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 8C13.1 8 14 7.1 14 6C14 4.9 13.1 4 12 4C10.9 4 10 4.9 10 6C10 7.1 10.9 8 12 8ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10ZM12 16C10.9 16 10 16.9 10 18C10 19.1 10.9 20 12 20C13.1 20 14 19.1 14 18C14 16.9 13.1 16 12 16Z" fill="#323232"/>
-                        </svg>   
-                        <div class="more_options" title="click">
-                            <ul> 
-                                <li>
-                                    <a id="{{bookmark.get_id}}" href="{% url 'remove_bookmark' %}?id={{bookmark.get_id}}" value="remove">remove</a>
-                                </li>
-                                <li>
-                                    <a id="{{bookmark.get_id}}" href="{% url 'update_bookmark' %}?id={{bookmark.get_id}}" value="update">update</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bottom">
-                        <div style="margin: 10px;">
-                            {{ bookmark.get_siteurl }}
-                        </div>
-                        <div>
-                            <a href="{{ bookmark.get_siteurl }}" target="_blank" class="highlight">
-                                open
-                            </a>
-                        </div>
+                <div class="bottom">
+                    <div class="highlight">
+                        open
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+            
         </div>
     </div>
 </body>

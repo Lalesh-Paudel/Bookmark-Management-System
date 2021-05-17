@@ -7,17 +7,17 @@
     <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
     {% load static %}
     <!-- Loading static files into a single location -->
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'css/favicon.ico' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Login1.css' %}">
     <!-- Django static files location -->
 </head>
 
 <body>
-    {{form}}
     {% include 'side_bar.html' %}
 
     <section>
         <div class="login-box">
-            <form action="authenticate" method="POST">
+            <form action="authenticate" method="POST"> 
                 {% csrf_token %}
                 <h1 class=loghead>Login Panel</h1>
                 <br>
@@ -31,11 +31,10 @@
                 <br>
                 <div class="btn"><button style="height: 40px;width: 120px" class="button">Login</button></div>
                 <br>
-                <p class="message">If you are not registered then click <a href="{% url 'registration' %}"
+                <p class="message">If you are not registered then click <a href="{% url 'register' %}"
                         style="color: #30b85d;">Register</a></p>
             </form>
         </div>
     </section>
 </body>
-
 </html>
